@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2 style="position: relative;left: 40%" th:text="${thing.name}"></h2>
+
+
+<main class="page-content" aria-label="Content" style="left: 10%; position: relative">
+    <a href="/thing"><h3>Back to create</h3></a>
+    <a href="/thing/s"><h3>See everything</h3></a>
+
+    <div style="margin-top: 10px;margin-bottom: 20px">
+
+        <form th:object="${thing}">
+            <input type="hidden" name="id" th:field="*{id}">
+            <p th:text="${thing.description}"></p>
+        </form>
+
+
+    </div>
+</main>
+</body>
+</html>

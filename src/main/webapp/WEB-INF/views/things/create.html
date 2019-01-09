@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2 style="position: relative;left: 40%">Create a thing</h2>
+
+<main  style="left: 30%; position: relative">
+    <a href="/thing/s"><h2>See everything</h2></a>
+    <div style="margin-top: 10px;margin-bottom: 20px">
+        <th:block th:if="${message}">
+            <p th:text="${message}"></p>
+        </th:block>
+        <form style="width: 40%" th:action="@{/thing}" th:object="${thing}" method="post">
+            <table>
+                <tr>
+                    <td>Name:</td>
+                    <td><input style="width: 250px" type="text" th:field="*{name}"/></td>
+                </tr>
+                <tr>
+                    <td>Description:</td>
+                    <td><textarea style="width: 250px;height: 50%" type="text" th:field="*{description}"/></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Create thing"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</main>
+</body>
+</html>
